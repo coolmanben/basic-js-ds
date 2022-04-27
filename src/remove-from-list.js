@@ -34,20 +34,26 @@ const { ListNode } = require('../extensions/list-node.js');
     prev = current;
     current = current.next ;
     
-    if ( current.value == k) {
+    if (current.value == k & current.next == null) {
+      prev.next = null;
+
+    }
+    else {
+
+    if ( current.value == k )  {
       current.value = current.next.value;
       current.next = current.next.next;
 
-      if ( current.value == k) {
+      if ( current.value == k ) {
         current.value = current.next.value;
         current.next = current.next.next;
       }
-    }
 
+    }
+    }
   }
   if ( current.value == k ) {
-    prev.next = null; 
-
+    //prev.next = null; 
   }
 
 
